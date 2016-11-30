@@ -1,0 +1,6 @@
+[appendix]
+[[appendix-dependency-versions]]
+== 依赖版本
+下表提供了所有构件的详细信息，它们是 Spring IO Platform 的一部分。当你声明这些构件的依赖却没有声明版本时，将使用表中列出的版本。
+
+include::../../../target/generated-resources/versions-table.adoc[]

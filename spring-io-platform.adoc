@@ -1,0 +1,63 @@
+= Spring IO platform
+Doc Writer <tequlia2pop@gmail.com>
+:toc: left
+:homepage: http://platform.spring.io/platform/
+
+Spring IO 是一个内聚的、版本化的平台，用于构建现代应用程序。它是一个模块化、企业级的 distribution，它提供了一组依赖的策略集，同时保持开发人员在仅能对他们需要的部分时具有完全的部署控制。Spring IO 是 100％ 开源、精益和模块化的。
+
+Spring IO platform  包括基础层（Foundation Layer）模块和执行层（Execution Layer）特定领域运行时（domain-specific runtimes，DSR）。基础层代表了已经协调好的核心 Spring 模块和相关的第三方依赖，以确保平滑的开发体验。Spring IO 执行层提供的 DSR 极大地简化了构建基于生产的、基于 JVM 的工作。Spring IO 的第一个版本包括两个 DSR：Spring Boot 和 Grails
+
+== 功能
+
+* 一个平台，多个工作负载（workload） - 构建 Web、集成、批处理，响应式或大数据应用程序
+* 极其简化的 Spring Boot 的开发体验
+* 提供开箱即用的 Production-ready 功能
+* Curated and harmonized dependencies that just work together
+* 模块化平台，允许开发人员只部署他们需要的部分
+* 支持嵌入式运行时，经典应用程序服务器和 PaaS 部署
+* 仅依赖于 Java SE，并支持 Groovy，Grails 和一部分 Java EE
+* 与你现有的依赖管理工具（如 Maven 和 Gradle）配合使用
+* Spring IO Platform 经过认证可以在 JDK 7 和 8.footnote:[虽然 Spring IO Platform 支持JDK 7 和 8，但许多单个 Spring 项目也支持旧的 JDK 版本。有关特定的最低要求，请参阅 http://spring.io/docs[单个项目文档\]] 上工作
+
+== 入门
+
+在项目中开始使用 `platform ` 的推荐方法是使用一个依赖管理系统 - 下面的代码段可以复制并粘贴到你的构建中。需要帮助？请参阅我们使用 http://spring.io/guides/gs/maven/[Maven] 和 http://spring.io/guides/gs/gradle/[Gradle] 构建的入门指南。
+
+[source,xml,indent=0]
+[subs="verbatim,quotes"]
+----
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>io.spring.platform</groupId>
+            <artifactId>platform-bom</artifactId>
+            <version>Athens-SR1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+----
+
+=== 使用 Platform
+
+Spring IO platform 提供了各种 Spring 项目及其依赖的版本。通过将上面显示的配置添加到构建脚本中，你可以声明依赖关系，而无需担心版本号：
+
+.Maven
+[source,xml,indent=0]
+[subs="verbatim,quotes"]
+----
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+</dependency>
+----
+
+.Gradle
+[source,groovy,indent=0]
+[subs="verbatim,quotes"]
+----
+dependencies {
+    compile 'org.springframework:spring-core'
+}
+----
